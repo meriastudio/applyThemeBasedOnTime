@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time-Based Theme Example</title>
+  <style>
+    .day-theme {
+      background-color: white;
+      color: black;
+    }
+    .night-theme {
+      background-color: black;
+      color: white;
+    }
+  </style>
+  <script>
+    function applyThemeBasedOnTime() {
+        var currentTime = new Date().getHours();
+        var bodyElement = document.querySelector('body');
+
+        if (currentTime >= 20 || currentTime < 6) {
+            bodyElement.classList.remove('day-theme');
+            bodyElement.classList.add('night-theme');
+        } else {
+            bodyElement.classList.remove('night-theme');
+            bodyElement.classList.add('day-theme');
+        }
+    }
+
+    // Call the function when the page loads
+    window.onload = applyThemeBasedOnTime;
+  </script>
+</head>
+<body class="day-theme">
+  <section>
+    <h1>Time-Based Theme Example</h1>
+    <p>This page demonstrates how to use JavaScript, HTML, and CSS to set the theme of a website based on the time of day.</p>
+  </div>
+  </section>
+</body>
+</html>
